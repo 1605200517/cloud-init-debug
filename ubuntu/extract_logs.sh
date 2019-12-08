@@ -1,12 +1,10 @@
 #!/bin/bash
 
 diskfile=$1
-diskfile="/ubuntu-bionic.qcow2"
 
 mkdir -p /mnt/$diskfile/
 mkdir -p logs
 mnt="/mnt/$diskfile/"
-
 
 modprobe nbd max_part=8
 qemu-nbd --connect=/dev/nbd0 $diskfile
